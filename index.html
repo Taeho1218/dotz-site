@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dotz — an AI-native one-person company</title>
+<meta name="description" content="dotz is a one-person company run by Taeho. It builds apps, and does the design and marketing, with a staff of Claude Code agents. Nothing goes out without a human's approval.">
+<meta name="theme-color" content="#EEEFEA">
+<link rel="canonical" href="https://dotz.io.kr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dotz">
+<meta property="og:title" content="dotz — an AI-native one-person company">
+<meta property="og:description" content="Apps, design and marketing by one person and a staff of Claude Code agents, with human approval on everything that goes out.">
+<meta property="og:url" content="https://dotz.io.kr/">
+<meta property="og:image" content="https://dotz.io.kr/assets/moontum-icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1311'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C8F03C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEEFEA; --ink:#0F1311; --muted:#4F5953; --rule:#C9CCC4;
+  --pine:#17402F; --dot:#C8F03C;
+  --sans:"Schibsted Grotesk","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:"JetBrains Mono","D2Coding",ui-monospace,Consolas,monospace;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 clamp(16px,1.1vw + 11px,19px)/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+html[lang=en] .ko, html[lang=ko] .en{display:none!important}
+html[lang=ko] body{word-break:keep-all;line-height:1.75}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--pine)}
+:focus-visible{outline:3px solid var(--pine);outline-offset:3px;border-radius:2px}
+.dark :focus-visible{outline-color:var(--dot)}
+.wrap{padding-inline:var(--gut);max-width:1320px;margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 12px;z-index:9}
+.skip:focus{left:8px}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+.dot{display:inline-block;width:.28em;height:.28em;border-radius:50%;background:var(--dot);margin-left:.04em}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding-block:22px}
+.logo{font-weight:700;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+.logo .dot{background:var(--ink)}
+nav.top{display:flex;gap:clamp(14px,3vw,34px);align-items:center}
+nav.top a{text-decoration:none}
+nav.top a.sec{display:none}
+@media(min-width:760px){nav.top a.sec{display:inline}}
+#lang{font:500 .74rem var(--mono);letter-spacing:.06em;background:none;border:1px solid var(--ink);color:var(--ink);padding:7px 12px;cursor:pointer;border-radius:999px}
+#lang:hover{background:var(--ink);color:var(--paper)}
+
+.hero{padding-block:clamp(56px,11vw,150px) clamp(48px,8vw,110px)}
+.hero h1{font-weight:500;font-size:clamp(2.2rem,6.4vw,5.6rem);line-height:1.04;letter-spacing:-.035em;margin:0;max-width:17ch}
+html[lang=ko] .hero h1{letter-spacing:-.045em;line-height:1.18;max-width:19ch;font-size:clamp(2rem,5.2vw,4.6rem)}
+.hero h1 .dot{width:.17em;height:.17em;margin-left:.06em}
+.hero p{max-width:46ch;margin:clamp(24px,3vw,40px) 0 0;color:var(--muted);font-size:1.12em}
+.hero .meta{margin-top:clamp(36px,6vw,80px);display:flex;flex-wrap:wrap;gap:8px 28px;color:var(--muted)}
+
+section{border-top:1px solid var(--ink)}
+.grid{display:grid;gap:20px clamp(24px,5vw,80px);padding-block:clamp(40px,7vw,96px)}
+@media(min-width:900px){.grid{grid-template-columns:minmax(150px,1fr) 4fr}}
+.grid>*{min-width:0}
+.label{color:var(--muted);align-self:start}
+@media(min-width:900px){.label{position:sticky;top:20px}}
+h2{font-weight:500;font-size:clamp(1.7rem,3.4vw,2.9rem);line-height:1.12;letter-spacing:-.025em;margin:0 0 .6em;max-width:24ch}
+html[lang=ko] h2{line-height:1.25}
+h3{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin:0}
+p{margin:0 0 1em;max-width:62ch}
+
+/* products */
+.product{display:grid;gap:22px clamp(20px,4vw,56px);padding-block:clamp(28px,4vw,48px);border-top:1px solid var(--rule)}
+.product:first-of-type{border-top:0;padding-top:0}
+@media(min-width:760px){.product{grid-template-columns:150px 1fr}}
+.icon{width:120px;height:120px;border-radius:26px;object-fit:cover;display:block}
+.num{font:400 3.2rem/1 var(--mono);color:var(--rule);letter-spacing:-.04em}
+.status{display:inline-flex;gap:10px;align-items:baseline;margin:.4em 0 1em;padding:6px 12px;border:1px solid var(--ink);border-radius:999px}
+dl.facts{display:grid;gap:12px 24px;margin:1.4em 0 0;max-width:62ch}
+@media(min-width:560px){dl.facts{grid-template-columns:120px 1fr}}
+dl.facts dt{color:var(--muted)}
+dl.facts dd{margin:0}
+.fine{color:var(--muted);font-size:.9em}
+
+/* how we work */
+.dark{background:var(--ink);color:#E8E9E3;border-top:0}
+.dark .label,.dark .fine,.dark p.lead{color:#A9B0A8}
+.dark a:hover{color:var(--dot)}
+.lead{font-size:1.15em;max-width:56ch}
+.flow{list-style:none;margin:clamp(28px,4vw,48px) 0;padding:0;display:grid;gap:0;counter-reset:s;border:1px solid #3A423D}
+@media(min-width:1000px){.flow{grid-template-columns:repeat(5,1fr)}}
+.flow li{padding:20px 18px 22px;border-top:1px solid #3A423D;counter-increment:s;position:relative}
+.flow li:first-child{border-top:0}
+@media(min-width:1000px){.flow li{border-top:0;border-left:1px solid #3A423D}.flow li:first-child{border-left:0}}
+.flow li::before{content:"0" counter(s);font:500 .74rem var(--mono);color:#8F988F;display:block;margin-bottom:14px}
+.flow b{display:block;font-size:1.05rem;margin-bottom:6px;letter-spacing:-.01em}
+.flow span{color:#A9B0A8;font-size:.9rem;line-height:1.5;display:block}
+.flow li.gate{background:var(--dot);color:var(--ink)}
+.flow li.gate::before{color:var(--ink)}
+.flow li.gate span{color:#22290F}
+.loop{display:flex;gap:12px;align-items:baseline;color:#A9B0A8;margin:-8px 0 clamp(36px,5vw,64px);font-size:.92rem;max-width:80ch}
+.loop .mono{color:var(--dot);white-space:nowrap}
+.cols{display:grid;gap:clamp(28px,4vw,48px) clamp(24px,4vw,64px)}
+@media(min-width:800px){.cols{grid-template-columns:1fr 1fr}}
+.cols h3{font-size:1.08rem;margin-bottom:.5em;display:flex;gap:12px;align-items:baseline}
+.cols h3 .mono{color:var(--dot)}
+.cols p{color:#C9CEC6;font-size:.96em}
+.roles{margin:0;padding:0;list-style:none;border-top:1px solid #3A423D}
+.roles li{display:grid;gap:2px 20px;padding:12px 0;border-bottom:1px solid #3A423D}
+.roles b{font-weight:500}
+.roles span{color:#A9B0A8}
+table{border-collapse:collapse;width:100%;max-width:62ch;font-size:.94em}
+th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid #3A423D;vertical-align:top}
+th{font:500 .74rem var(--mono);letter-spacing:.06em;color:var(--dot);width:3.2em}
+.note{border-left:3px solid var(--dot);padding:4px 0 4px 18px;margin:clamp(28px,4vw,48px) 0 0;max-width:62ch;color:#D6DAD2}
+
+/* contact */
+.mail{font-size:clamp(1.4rem,3.4vw,2.6rem);letter-spacing:-.02em;font-weight:500;word-break:break-all}
+footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex-wrap:wrap;gap:8px 32px;justify-content:space-between;color:var(--muted)}
+
+@media(prefers-reduced-motion:no-preference){
+  .hero h1,.hero p,.hero .meta{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero p{animation-delay:.12s}.hero .meta{animation-delay:.22s}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="ko">본문으로 건너뛰기</span></a>
+
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="#top" aria-label="dotz">dotz<span class="dot"></span></a>
+  <nav class="top" aria-label="Primary">
+    <a class="sec" href="#products"><span class="en">Products</span><span class="ko">제품</span></a>
+    <a class="sec" href="#how"><span class="en">How we work</span><span class="ko">일하는 방식</span></a>
+    <a class="sec" href="#contact"><span class="en">Contact</span><span class="ko">연락처</span></a>
+    <button id="lang" type="button" aria-label="Switch language / 언어 전환"><span class="en">한국어</span><span class="ko">EN</span></button>
+  </nav>
+</header>
+</div>
+
+<main id="main">
+<div class="wrap" id="top">
+  <div class="hero">
+    <h1>
+      <span class="en">One person and a staff of AI agents, building apps<span class="dot"></span></span>
+      <span class="ko">사람 한 명과 AI 직원들이 앱을 만듭니다<span class="dot"></span></span>
+    </h1>
+    <p>
+      <span class="en">dotz is an AI-native one-person company run by Taeho. We build apps, and do the design and marketing for them, with a team of Claude Code agents. Anything that leaves the company is approved by a person first.</span>
+      <span class="ko">dotz는 태호가 운영하는 AI 네이티브 1인 기업입니다. Claude Code 기반 AI 직원들과 함께 앱을 만들고, 디자인과 마케팅까지 합니다. 회사 밖으로 나가는 일은 반드시 사람이 먼저 승인합니다.</span>
+    </p>
+    <div class="meta mono">
+      <span class="en">Apps / Design / Marketing</span><span class="ko">앱 / 디자인 / 마케팅</span>
+      <span class="en">Built with Claude Code</span><span class="ko">Claude Code로 만듦</span>
+    </div>
+  </div>
+</div>
+
+<section id="products" aria-labelledby="h-products">
+<div class="wrap grid">
+  <div class="label mono">01 <span class="en">Products</span><span class="ko">제품</span></div>
+  <div>
+    <h2 id="h-products"><span class="en">Two apps, both still before launch.</span><span class="ko">앱 두 개, 둘 다 아직 출시 전입니다.</span></h2>
+
+    <article class="product" aria-labelledby="p-moontum">
+      <img class="icon" src="assets/moontum-icon.png" width="120" height="120" alt="Moontum app icon: the Korean title 문틈 in white, brush-style lettering on black">
+      <div>
+        <h3 id="p-moontum">문틈 <span class="fine">Moontum</span></h3>
+        <p class="status mono"><span class="en">In store review</span><span class="ko">스토어 심사 중</span> · <span class="en">as of 2026-10-06</span><span class="ko">2026-10-06 기준</span></p>
+        <p>
+          <span class="en">A community for reading and writing horror stories. Each page of a story can trigger an effect on the reader's phone: a notification, a sound, the camera, an incoming-call screen. Readers swipe through pages, rate stories and follow authors.</span>
+          <span class="ko">공포 썰을 읽고 쓰는 커뮤니티 앱입니다. 이야기의 페이지마다 알림, 소리, 카메라, 걸려 오는 전화 화면 같은 효과를 넣을 수 있습니다. 독자는 옆으로 넘겨 읽고, 추천하고, 작가를 팔로우합니다.</span>
+        </p>
+        <dl class="facts">
+          <dt class="mono"><span class="en">For</span><span class="ko">대상</span></dt>
+          <dd><span class="en">Horror readers and writers aged 16 and over.</span><span class="ko">만 16세 이상의 공포 썰 독자와 작가.</span></dd>
+          <dt class="mono"><span class="en">Status</span><span class="ko">현재 상태</span></dt>
+          <dd>
+            <span class="en">Version 1.0.2 was submitted to Apple review and is waiting for a result; release will be manual. On Google Play, the build is in closed testing and production access has been requested. It is not publicly available yet.</span>
+            <span class="ko">1.0.2 버전을 애플 심사에 제출해 결과를 기다리고 있고, 출시는 수동입니다. 구글 플레이는 비공개 테스트 중이며 프로덕션 액세스를 신청했습니다. 아직 일반에 공개되지 않았습니다.</span>
+          </dd>
+          <dt class="mono"><span class="en">Stack</span><span class="ko">구성</span></dt>
+          <dd>Flutter, Spring Boot, MySQL</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="product" aria-labelledby="p-medione">
+      <div class="num" aria-hidden="true">02</div>
+      <div>
+        <h3 id="p-medione">메디원 <span class="fine">MediOne</span></h3>
+        <p class="status mono"><span class="en">In development</span><span class="ko">개발 중</span> · <span class="en">as of 2026-10-01</span><span class="ko">2026-10-01 기준</span></p>
+        <p>
+          <span class="en">A family care app for medication. An adult child who lives far from their parents registers the parents' medicines and sees, in real time, whether each dose was taken. The parent's side is one large button: "I took it."</span>
+          <span class="ko">가족 케어 복약 관리 앱입니다. 멀리 사는 자녀가 부모님의 약을 등록하고, 복용 여부를 실시간으로 확인합니다. 부모님 화면에는 큰 버튼 하나, "복용 완료했어요"만 있습니다.</span>
+        </p>
+        <dl class="facts">
+          <dt class="mono"><span class="en">For</span><span class="ko">대상</span></dt>
+          <dd><span class="en">Guardians in their 30s to 50s who live apart from their parents, and parents aged 60 and over (large type, 56dp buttons, one action per screen).</span><span class="ko">부모님과 따로 사는 30~50대 보호자, 그리고 60대 이상 부모님(큰 글씨, 56dp 버튼, 한 화면에 한 가지 행동).</span></dd>
+          <dt class="mono"><span class="en">Status</span><span class="ko">현재 상태</span></dt>
+          <dd>
+            <span class="en">The family-connection flow works end to end: sign-in with Kakao, Apple or Google, invite by link plus a 6-digit code, consent, connect, leave. Medication logging on the server and push notifications are the next step. Not yet in the stores.</span>
+            <span class="ko">가족 연결 흐름은 처음부터 끝까지 동작합니다. 카카오·Apple·Google 로그인, 링크와 6자리 번호 초대, 동의, 연결, 탈퇴까지입니다. 서버 연동 복약 기록과 푸시 알림이 다음 단계입니다. 아직 스토어에 올라가 있지 않습니다.</span>
+          </dd>
+          <dt class="mono"><span class="en">Web</span><span class="ko">웹</span></dt>
+          <dd><a href="https://medione.dotz.io.kr">medione.dotz.io.kr</a> <span class="fine"><span class="en">(invite page and privacy policy)</span><span class="ko">(초대 페이지, 개인정보처리방침)</span></span></dd>
+          <dt class="mono"><span class="en">Note</span><span class="ko">참고</span></dt>
+          <dd><span class="en">Not a medical device. We make no claims about preventing or treating illness. Legal review is planned before submission to the stores.</span><span class="ko">의료기기가 아니며, 질병의 예방·치료 효과를 내세우지 않습니다. 스토어 제출 전에 법률 검토를 할 예정입니다.</span></dd>
+        </dl>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="how" class="dark" aria-labelledby="h-how">
+<div class="wrap grid">
+  <div class="label mono">02 <span class="en">How we work with Claude</span><span class="ko">Claude와 일하는 방식</span></div>
+  <div>
+    <h2 id="h-how"><span class="en">The agents do the work. A person decides what leaves the building.</span><span class="ko">일은 AI 직원이 하고, 밖으로 나가는 일은 사람이 정합니다.</span></h2>
+    <p class="lead">
+      <span class="en">dotz runs on Claude Code. The main Claude session acts as chief of staff: it splits work between specialist agents, collects their reports, and asks Taeho for approval. The rules below are written down and the agents load them every session.</span>
+      <span class="ko">dotz는 Claude Code로 돌아갑니다. 메인 Claude 세션이 실장 역할로 일을 직원들에게 나누고, 보고를 모으고, 태호에게 승인을 받습니다. 아래 규칙은 문서로 적혀 있고, 직원들은 세션마다 이를 불러와 따릅니다.</span>
+    </p>
+
+    <ol class="flow" aria-label="Workflow">
+      <li><b><span class="en">Direction</span><span class="ko">방향</span></b><span><span class="en">Taeho sets the goal and the constraints for a team.</span><span class="ko">태호가 팀의 목표와 제약을 정합니다.</span></span></li>
+      <li><b><span class="en">Chief of staff</span><span class="ko">실장</span></b><span><span class="en">The main Claude session assigns work and calls the right agent.</span><span class="ko">메인 Claude 세션이 일을 나누고 알맞은 직원을 부릅니다.</span></span></li>
+      <li><b><span class="en">Staff</span><span class="ko">직원</span></b><span><span class="en">Agents draft, build or research, then report with a three-line retrospective.</span><span class="ko">직원이 초안·구현·조사를 하고, 회고 3줄을 붙여 보고합니다.</span></span></li>
+      <li class="gate"><b><span class="en">Approval</span><span class="ko">승인</span></b><span><span class="en">Posting, sending, payment, store submission and release wait for Taeho. Confirmed again right before running.</span><span class="ko">게시, 전송, 결제, 스토어 제출, 출시는 태호 승인을 기다립니다. 실행 직전에 한 번 더 확인합니다.</span></span></li>
+      <li><b><span class="en">Record</span><span class="ko">기록</span></b><span><span class="en">The session is saved as a worklog; approved items enter the wiki.</span><span class="ko">세션이 작업일지로 저장되고, 승인된 내용만 위키에 들어갑니다.</span></span></li>
+    </ol>
+    <p class="loop"><span class="mono"><span class="en">Loop</span><span class="ko">순환</span></span>
+      <span><span class="en">The next session starts from the wiki and the team's handoff file, and the weekly review feeds changes back into the agents' manuals.</span><span class="ko">다음 세션은 위키와 팀 인계서에서 시작하고, 주간 검토가 직원 매뉴얼을 고치는 데 쓰입니다.</span></span></p>
+
+    <div class="cols">
+      <div>
+        <h3><span class="mono">A</span><span class="en">Specialist agents</span><span class="ko">역할별 AI 직원</span></h3>
+        <ul class="roles">
+          <li><b><span class="en">Planning lead</span><span class="ko">기획팀장</span></b><span><span class="en">Research and validation; writes and updates the seven-document spec for each app.</span><span class="ko">리서치와 검증, 앱마다 기획서 7종 작성·갱신.</span></span></li>
+          <li><b><span class="en">Designer</span><span class="ko">디자이너</span></b><span><span class="en">Screen structure, design direction, design and accessibility review.</span><span class="ko">화면 구조, 디자인 방향, 디자인·접근성 검수.</span></span></li>
+          <li><b><span class="en">Marketer</span><span class="ko">마케터</span></b><span><span class="en">Drafts posts and analyzes channel insights. Has no posting tool.</span><span class="ko">게시글 초안과 채널 분석. 게시 도구가 없습니다.</span></span></li>
+          <li><b><span class="en">Ops and settlement</span><span class="ko">운영정산</span></b><span><span class="en">Open tasks, risks, pre-release checklists, weekly team report.</span><span class="ko">남은 일, 위험, 배포 전 점검, 주간 팀 보고.</span></span></li>
+          <li><b><span class="en">Researcher</span><span class="ko">리서처</span></b><span><span class="en">Collects outside material, grades its reliability, proposes improvements.</span><span class="ko">외부 자료 수집, 신뢰도 등급, 개선 제안.</span></span></li>
+          <li><b><span class="en">Developers</span><span class="ko">개발</span></b><span><span class="en">Claude Code agents for implementation, code review and verification.</span><span class="ko">구현, 코드 리뷰, 검증을 맡는 Claude Code 에이전트.</span></span></li>
+        </ul>
+        <p class="fine" style="margin-top:12px"><span class="en">One manual per role, shared across teams. Each app has its own team charter (product, customer, tone, goals, what not to do).</span><span class="ko">직무 매뉴얼은 역할마다 하나를 공용으로 쓰고, 앱마다 팀 헌장(제품, 고객, 톤, 목표, 금지 사항)을 따로 둡니다.</span></p>
+      </div>
+
+      <div>
+        <h3><span class="mono">B</span><span class="en">Human approval rules</span><span class="ko">사람 승인 규칙</span></h3>
+        <p><span class="en">Agents may draft, but anything that goes outside gets approved first: posts, messages, payments, store submissions, releases. Agents also may not delete files (they move them to a holding folder), sign up for or pay for services, read secret files, or contact customers.</span><span class="ko">직원은 초안까지만 씁니다. 게시, 전송, 결제, 스토어 제출, 출시처럼 밖으로 나가는 일은 먼저 승인을 받습니다. 직원은 파일을 지우지 않고(보류 폴더로 옮김), 서비스에 가입·결제하지 않고, 비밀값 파일을 읽지 않고, 고객과 직접 소통하지 않습니다.</span></p>
+        <p><span class="en">Limits are enforced by tooling where possible: the marketer simply has no posting tool.</span><span class="ko">가능한 한 도구로 제한합니다. 마케터에게는 게시 도구 자체가 없습니다.</span></p>
+      </div>
+
+      <div>
+        <h3><span class="mono">C</span><span class="en">Memory that carries across sessions</span><span class="ko">세션을 넘어 이어지는 기억</span></h3>
+        <p><span class="en">Knowledge lives in a markdown wiki: operating rules, project pages, research. When a session ends, a hook saves a worklog to a pending inbox; at the next start Taeho decides whether it enters the wiki. Each team keeps a handoff file that is loaded automatically when a session opens, along with the tail of the previous conversation. Rule changes at headquarters are pushed to running team sessions.</span><span class="ko">지식은 마크다운 위키에 있습니다. 운영 규칙, 프로젝트 페이지, 리서치입니다. 세션이 끝나면 훅이 작업일지를 승인 대기함에 저장하고, 다음에 열 때 태호가 위키에 넣을지 정합니다. 팀마다 인계서가 있어 세션을 열면 자동으로 읽히고, 직전 대화의 끝부분도 함께 불러옵니다. 본사에서 규칙이 바뀌면 열려 있는 팀 세션에도 전달됩니다.</span></p>
+      </div>
+
+      <div>
+        <h3><span class="mono">D</span><span class="en">Weekly self-review</span><span class="ko">주간 자체 검토</span></h3>
+        <p><span class="en">Every report ends with three lines: what went well, what got stuck, what to change in the manual. Once a week the retrospectives, agent memory and the researcher's proposals are gathered, and the proposed edits to agent files and guidelines are shown as a diff. Only what Taeho approves is applied, and the old text is kept in a change log. Agents never edit their own manuals; they only propose.</span><span class="ko">보고는 모두 회고 3줄로 끝납니다. 잘된 것, 막힌 것, 매뉴얼에 고칠 것입니다. 일주일에 한 번 회고와 직원 기억, 리서처의 제안을 모아 직원 파일과 지침서의 수정안을 diff로 보여 주고, 태호가 승인한 것만 반영합니다. 이전 내용은 변경 이력에 남깁니다. 직원이 자기 매뉴얼을 스스로 고치지는 않고 제안만 합니다.</span></p>
+      </div>
+
+      <div>
+        <h3><span class="mono">E</span><span class="en">Research reliability grades</span><span class="ko">리서치 신뢰도 등급</span></h3>
+        <table>
+          <tr><th>A</th><td><span class="en">Official docs, primary sources, named press. Can be the basis for a rule.</span><span class="ko">공식 문서, 1차 자료, 실명 언론. 지침의 근거로 쓸 수 있음.</span></td></tr>
+          <tr><th>B</th><td><span class="en">Reproducible hands-on reports (dates, code, figures). Trial first, then adopt.</span><span class="ko">날짜·코드·수치로 재현되는 실사용 후기. 시범 적용 뒤 반영.</span></td></tr>
+          <tr><th>C</th><td><span class="en">Claims only, or selling a course. Marked as a claim, reference only.</span><span class="ko">주장뿐이거나 강의 판매용. "(주장)"으로 표시하고 참고만.</span></td></tr>
+        </table>
+        <p class="fine" style="margin-top:12px"><span class="en">Unverified figures carry an "unconfirmed" tag. Sources with no date count as C.</span><span class="ko">확인 안 된 수치에는 "(확인 안 됨)"을 붙이고, 날짜가 없는 자료는 C로 봅니다.</span></p>
+      </div>
+
+      <div>
+        <h3><span class="mono">F</span><span class="en">A second model checks before release</span><span class="ko">출시 전에 다른 모델이 한 번 더 봅니다</span></h3>
+        <p><span class="en">Before store submission, and for sign-in, payment and personal-data code, agents recommend a read-only review by a different model, because the same model tends to miss the same things. Taeho approves each run, and the findings are checked against the code before anything is changed.</span><span class="ko">스토어 제출 전이나 로그인·결제·개인정보 코드에는 직원이 다른 모델의 읽기 전용 검토를 추천합니다. 같은 모델은 같은 곳을 놓치기 쉽기 때문입니다. 실행은 태호가 승인하고, 지적 사항은 코드로 확인한 뒤에야 반영합니다.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contact" aria-labelledby="h-contact">
+<div class="wrap grid">
+  <div class="label mono">03 <span class="en">Contact</span><span class="ko">연락처</span></div>
+  <div>
+    <h2 id="h-contact"><span class="en">Write to Taeho.</span><span class="ko">태호에게 보내 주세요.</span></h2>
+    <p class="mail"><a id="mail" href="#contact"><span class="en">Email address coming soon</span><span class="ko">이메일 주소 준비 중</span></a></p>
+  </div>
+</div>
+</section>
+</main>
+
+<div class="wrap">
+<footer class="mono">
+  <span>dotz.io.kr</span>
+  <span class="en">Built with Claude Code. Not affiliated with Anthropic.</span><span class="ko">Claude Code로 만들었습니다. Anthropic과 제휴 관계가 아닙니다.</span>
+</footer>
+</div>
+
+<script>
+// Single place for the contact address. Replace the placeholder and the link appears.
+const CONTACT_EMAIL = "taeho@dotz.io.kr";
+
+const root = document.documentElement;
+const T = { en: "dotz — an AI-native one-person company", ko: "dotz — AI 네이티브 1인 기업" };
+function setLang(l){
+  root.lang = l;
+  document.title = T[l];
+  try { localStorage.setItem("dotz-lang", l); } catch (e) {}
+}
+let saved = null;
+try { saved = localStorage.getItem("dotz-lang"); } catch (e) {}
+setLang(saved === "ko" || saved === "en" ? saved : "en");
+document.getElementById("lang").addEventListener("click", () => setLang(root.lang === "en" ? "ko" : "en"));
+
+if (!CONTACT_EMAIL.includes("{{")) {
+  const a = document.getElementById("mail");
+  a.href = "mailto:" + CONTACT_EMAIL;
+  a.textContent = CONTACT_EMAIL;
+}
+</script>
+</body>
+</html>
