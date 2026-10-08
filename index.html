@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>dotz — an AI-native one-person company</title>
-<meta name="description" content="dotz is a one-person company run by Taeho. It builds apps, and does the design and marketing, with a staff of Claude Code agents. Nothing goes out without a human's approval.">
+<meta name="description" content="dotz is a one-person, AI-native company with seven apps on the App Store, built and maintained with a staff of Claude Code agents. App development for clients is available. Nothing goes out without human approval.">
 <meta name="theme-color" content="#EEEFEA">
 <link rel="canonical" href="https://dotz.io.kr/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="dotz">
 <meta property="og:title" content="dotz — an AI-native one-person company">
-<meta property="og:description" content="Apps, design and marketing by one person and a staff of Claude Code agents, with human approval on everything that goes out.">
+<meta property="og:description" content="Seven apps on the App Store from one person and a staff of Claude Code agents, with human approval on everything that goes out.">
 <meta property="og:url" content="https://dotz.io.kr/">
 <meta property="og:image" content="https://dotz.io.kr/assets/moontum-icon.png">
 <meta name="twitter:card" content="summary">
@@ -70,6 +70,24 @@ h3{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin:0}
 p{margin:0 0 1em;max-width:62ch}
 
 /* products */
+.apps{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.app{display:grid;grid-template-columns:64px 1fr;gap:6px 18px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:start}
+.app img{width:64px;height:64px;border-radius:15px;display:block;grid-row:span 2}
+.app h4{margin:0;font-size:1.15rem;letter-spacing:-.01em}
+.app p{margin:.2em 0 0;font-size:.95em;max-width:52ch}
+.am{display:flex;flex-wrap:wrap;gap:2px 18px;margin:8px 0 0;grid-column:2}
+.am dt,.am dd{display:inline;margin:0}.am dt{color:var(--muted);margin-right:6px}.am div{display:flex}
+.store{grid-column:2;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:6px 12px;justify-self:start;margin-top:6px}
+.store:hover{background:var(--ink);color:var(--paper)}
+@media(min-width:900px){
+  .app{grid-template-columns:64px minmax(0,1fr) 250px 120px;align-items:center;gap:6px 24px}
+  .app img{grid-row:auto}.am{display:block;grid-column:auto;margin:0}.am dt,.am dd{display:inline}.am dd:after{content:"";display:block}
+  .store{grid-column:auto;justify-self:end;margin:0}
+}
+.sub{margin:clamp(40px,6vw,72px) 0 20px;font-weight:500;color:var(--muted)}
+.product.solo{border-top:0;padding-top:0}
+.biz{display:block;text-transform:none;letter-spacing:0;font-size:.82rem;max-width:60ch;line-height:1.7}
+
 .product{display:grid;gap:22px clamp(20px,4vw,56px);padding-block:clamp(28px,4vw,48px);border-top:1px solid var(--rule)}
 .product:first-of-type{border-top:0;padding-top:0}
 @media(min-width:760px){.product{grid-template-columns:150px 1fr}}
@@ -82,6 +100,8 @@ dl.facts dt{color:var(--muted)}
 dl.facts dd{margin:0}
 .fine{color:var(--muted);font-size:.9em}
 
+@media(min-width:760px){.product.solo{grid-template-columns:1fr}}
+.am dd{white-space:nowrap}
 /* how we work */
 .dark{background:var(--ink);color:#E8E9E3;border-top:0}
 .dark .label,.dark .fine,.dark p.lead{color:#A9B0A8}
@@ -133,8 +153,9 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
 <header class="top">
   <a class="logo" href="#top" aria-label="dotz">dotz<span class="dot"></span></a>
   <nav class="top" aria-label="Primary">
-    <a class="sec" href="#products"><span class="en">Products</span><span class="ko">제품</span></a>
+    <a class="sec" href="#products"><span class="en">Apps</span><span class="ko">앱</span></a>
     <a class="sec" href="#how"><span class="en">How we work</span><span class="ko">일하는 방식</span></a>
+    <a class="sec" href="#client"><span class="en">Client work</span><span class="ko">개발 의뢰</span></a>
     <a class="sec" href="#contact"><span class="en">Contact</span><span class="ko">연락처</span></a>
     <button id="lang" type="button" aria-label="Switch language / 언어 전환"><span class="en">한국어</span><span class="ko">EN</span></button>
   </nav>
@@ -145,12 +166,12 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
 <div class="wrap" id="top">
   <div class="hero">
     <h1>
-      <span class="en">One person and a staff of AI agents, building apps<span class="dot"></span></span>
-      <span class="ko">사람 한 명과 AI 직원들이 앱을 만듭니다<span class="dot"></span></span>
+      <span class="en">One person and a staff of AI agents. Seven apps on the App Store<span class="dot"></span></span>
+      <span class="ko">사람 한 명과 AI 직원들, App Store의 앱 7개<span class="dot"></span></span>
     </h1>
     <p>
-      <span class="en">dotz is an AI-native one-person company run by Taeho. We build apps, and do the design and marketing for them, with a team of Claude Code agents. Anything that leaves the company is approved by a person first.</span>
-      <span class="ko">dotz는 태호가 운영하는 AI 네이티브 1인 기업입니다. Claude Code 기반 AI 직원들과 함께 앱을 만들고, 디자인과 마케팅까지 합니다. 회사 밖으로 나가는 일은 반드시 사람이 먼저 승인합니다.</span>
+      <span class="en">dotz is an AI-native one-person company run by Taeho. Since February 2026 we have released seven apps on the App Store and keep updating them, doing the design and marketing too, with a team of Claude Code agents. We also take on app development for clients. Anything that leaves the company is approved by a person first.</span>
+      <span class="ko">dotz는 태호가 운영하는 AI 네이티브 1인 기업입니다. Claude Code 기반 AI 직원들과 함께 2026년 2월부터 App Store에 앱 7개를 출시했고, 디자인과 마케팅까지 하며 계속 업데이트합니다. 앱 개발 의뢰도 받습니다. 회사 밖으로 나가는 일은 반드시 사람이 먼저 승인합니다.</span>
     </p>
     <div class="meta mono">
       <span class="en">Apps / Design / Marketing</span><span class="ko">앱 / 디자인 / 마케팅</span>
@@ -161,35 +182,89 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
 
 <section id="products" aria-labelledby="h-products">
 <div class="wrap grid">
-  <div class="label mono">01 <span class="en">Products</span><span class="ko">제품</span></div>
+  <div class="label mono">01 <span class="en">Apps</span><span class="ko">앱</span></div>
   <div>
-    <h2 id="h-products"><span class="en">Two apps, both still before launch.</span><span class="ko">앱 두 개, 둘 다 아직 출시 전입니다.</span></h2>
+    <h2 id="h-products"><span class="en">Seven apps on the App Store, one more in development.</span><span class="ko">App Store에 앱 7개, 개발 중인 앱 하나.</span></h2>
+    <p class="fine"><span class="en">Release and update dates are from the App Store listings.</span><span class="ko">출시일과 업데이트 날짜는 App Store 등록 정보 기준입니다.</span></p>
 
     <article class="product" aria-labelledby="p-moontum">
-      <img class="icon" src="assets/moontum-icon.png" width="120" height="120" alt="Moontum app icon: the Korean title 문틈 in white, brush-style lettering on black">
+      <img class="icon" src="assets/moontum-icon.png" width="120" height="120" alt="Moontum app icon: the Korean title 문틈 in white brush-style lettering on black">
       <div>
         <h3 id="p-moontum">문틈 <span class="fine">Moontum</span></h3>
-        <p class="status mono"><span class="en">In store review</span><span class="ko">스토어 심사 중</span> · <span class="en">as of 2026-10-06</span><span class="ko">2026-10-06 기준</span></p>
+        <p class="status mono"><span class="en">On the App Store</span><span class="ko">App Store 출시</span> · <span class="en">updated 2026-10-07, v1.0.2</span><span class="ko">2026-10-07 업데이트, v1.0.2</span></p>
         <p>
-          <span class="en">A community for reading and writing horror stories. Each page of a story can trigger an effect on the reader's phone: a notification, a sound, the camera, an incoming-call screen. Readers swipe through pages, rate stories and follow authors.</span>
-          <span class="ko">공포 썰을 읽고 쓰는 커뮤니티 앱입니다. 이야기의 페이지마다 알림, 소리, 카메라, 걸려 오는 전화 화면 같은 효과를 넣을 수 있습니다. 독자는 옆으로 넘겨 읽고, 추천하고, 작가를 팔로우합니다.</span>
+          <span class="en">A horror story app where your phone reacts as you turn the pages. A character's message arrives as a real notification, an unknown number calls, the front camera switches on, a knock sounds. Readers can also write their own stories with these effects, rate stories and follow authors.</span>
+          <span class="ko">페이지를 넘길 때마다 휴대폰이 반응하는 공포 썰 앱입니다. 이야기 속 인물의 메시지가 실제 알림으로 오고, 모르는 번호로 전화가 걸려 오고, 전면 카메라가 켜지고, 노크 소리가 납니다. 독자는 이런 효과를 넣어 직접 이야기를 쓰고, 추천하고, 작가를 팔로우할 수 있습니다.</span>
         </p>
         <dl class="facts">
           <dt class="mono"><span class="en">For</span><span class="ko">대상</span></dt>
           <dd><span class="en">Horror readers and writers aged 16 and over.</span><span class="ko">만 16세 이상의 공포 썰 독자와 작가.</span></dd>
-          <dt class="mono"><span class="en">Status</span><span class="ko">현재 상태</span></dt>
-          <dd>
-            <span class="en">Version 1.0.2 was submitted to Apple review and is waiting for a result; release will be manual. On Google Play, the build is in closed testing and production access has been requested. It is not publicly available yet.</span>
-            <span class="ko">1.0.2 버전을 애플 심사에 제출해 결과를 기다리고 있고, 출시는 수동입니다. 구글 플레이는 비공개 테스트 중이며 프로덕션 액세스를 신청했습니다. 아직 일반에 공개되지 않았습니다.</span>
-          </dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt>
+          <dd>2026-08-03</dd>
           <dt class="mono"><span class="en">Stack</span><span class="ko">구성</span></dt>
           <dd>Flutter, Spring Boot, MySQL</dd>
+          <dt class="mono">Android</dt>
+          <dd><span class="en">Google Play release pending</span><span class="ko">구글 플레이 출시 대기 중</span></dd>
+          <dt class="mono"><span class="en">Link</span><span class="ko">링크</span></dt>
+          <dd><a href="https://apps.apple.com/kr/app/%EB%AC%B8%ED%8B%88-%ED%8F%B0%EC%9D%B4-%EB%B0%98%EC%9D%91%ED%95%98%EB%8A%94-%EA%B3%B5%ED%8F%AC-%EC%9D%B4%EC%95%BC%EA%B8%B0/id6768678177">App Store</a></dd>
         </dl>
       </div>
     </article>
 
-    <article class="product" aria-labelledby="p-medione">
-      <div class="num" aria-hidden="true">02</div>
+    <ol class="apps" aria-label="More apps">
+      <li class="app">
+        <img src="assets/submeet.jpg" width="64" height="64" alt="Submeet app icon" loading="lazy">
+        <div class="ab"><h4>써밋 <span class="fine">Submeet</span></h4>
+          <p><span class="en">A community for verified university students, organized around the subway line you ride instead of where you live.</span><span class="ko">학교 이메일로 인증한 대학생의 커뮤니티. 사는 동네가 아니라 타는 노선으로 만납니다.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Social</span><span class="ko">소셜</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-02</dd><dt class="mono">Android</dt><dd>Google Play</dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/%EC%8D%A8%EB%B0%8B-submeet/id6758037720" aria-label="Submeet on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+      <li class="app">
+        <img src="assets/ditto.jpg" width="64" height="64" alt="Ditto app icon" loading="lazy">
+        <div class="ab"><h4>디토 <span class="fine">Ditto</span></h4>
+          <p><span class="en">A to-do and goal app where finishing tasks grows an animal companion.</span><span class="ko">할 일을 끝낼수록 동물 친구가 자라는 할 일·목표 관리 앱.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Lifestyle</span><span class="ko">라이프스타일</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-03</dd><dt class="mono"><span class="en">Updated</span><span class="ko">업데이트</span></dt><dd>2026-08-06 · v1.0.4</dd><dt class="mono">Android</dt><dd>Google Play</dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/%EB%94%94%ED%86%A0-ditto/id6759387935" aria-label="Ditto on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+      <li class="app">
+        <img src="assets/rough.jpg" width="64" height="64" alt="ROUGH app icon" loading="lazy">
+        <div class="ab"><h4>ROUGH</h4>
+          <p><span class="en">Find teammates for a project and start working in real-time chat.</span><span class="ko">프로젝트에 함께할 팀원을 찾고, 실시간 채팅으로 바로 협업을 시작합니다.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Social</span><span class="ko">소셜</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-05</dd><dt class="mono"><span class="en">Updated</span><span class="ko">업데이트</span></dt><dd>2026-05-27 · v1.0.2</dd><dt class="mono">Android</dt><dd><a href="https://play.google.com/store/apps/details?id=com.dotz.rough">Google Play</a></dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/rough/id6761455057" aria-label="ROUGH on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+      <li class="app">
+        <img src="assets/sicha.jpg" width="64" height="64" alt="Sicha Mate app icon" loading="lazy">
+        <div class="ab"><h4>시차메이트 <span class="fine">Sicha Mate</span></h4>
+          <p><span class="en">Time-difference cards styled like boarding passes, showing the time in the cities you keep in touch with.</span><span class="ko">보딩패스 모양 카드로 연락하는 도시들의 시간과 시차를 한눈에 보여 줍니다.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Lifestyle</span><span class="ko">라이프스타일</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-08</dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/%EC%8B%9C%EC%B0%A8%EB%A9%94%EC%9D%B4%ED%8A%B8/id6780753611" aria-label="Sicha Mate on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+      <li class="app">
+        <img src="assets/mwojuji.jpg" width="64" height="64" alt="Mwojuji app icon" loading="lazy">
+        <div class="ab"><h4>뭐주지 <span class="fine">Mwojuji</span></h4>
+          <p><span class="en">AI gift suggestions based on the relationship, occasion, budget and taste.</span><span class="ko">관계, 상황, 예산, 취향을 바탕으로 선물을 추천하는 AI 앱.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Entertainment</span><span class="ko">엔터테인먼트</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-08</dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/%EB%AD%90%EC%A3%BC%EC%A7%80/id6792242568" aria-label="Mwojuji on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+      <li class="app">
+        <img src="assets/kkini.jpg" width="64" height="64" alt="KkiniPick app icon" loading="lazy">
+        <div class="ab"><h4>끼니Pick <span class="fine">KkiniPick</span></h4>
+          <p><span class="en">AI meal suggestions from the time of day, your taste, budget, location and recent meals.</span><span class="ko">시간대, 취향, 예산, 위치, 최근 식사를 바탕으로 메뉴와 주변 식당을 추천하는 AI 앱.</span></p></div>
+        <dl class="am"><dt class="mono"><span class="en">Genre</span><span class="ko">분야</span></dt><dd><span class="en">Food & Drink</span><span class="ko">음식</span></dd>
+          <dt class="mono"><span class="en">Released</span><span class="ko">첫 출시</span></dt><dd>2026-08</dd></dl>
+        <a class="store mono" href="https://apps.apple.com/kr/app/%EB%81%BC%EB%8B%88pick/id6792488306" aria-label="KkiniPick on the App Store"><span>App Store</span> &#8599;</a>
+      </li>
+    </ol>
+
+    <h3 class="sub mono"><span class="en">In development</span><span class="ko">개발 중</span></h3>
+    <article class="product solo" aria-labelledby="p-medione">
+      
       <div>
         <h3 id="p-medione">메디원 <span class="fine">MediOne</span></h3>
         <p class="status mono"><span class="en">In development</span><span class="ko">개발 중</span> · <span class="en">as of 2026-10-01</span><span class="ko">2026-10-01 기준</span></p>
@@ -222,8 +297,8 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
   <div>
     <h2 id="h-how"><span class="en">The agents do the work. A person decides what leaves the building.</span><span class="ko">일은 AI 직원이 하고, 밖으로 나가는 일은 사람이 정합니다.</span></h2>
     <p class="lead">
-      <span class="en">dotz runs on Claude Code. The main Claude session acts as chief of staff: it splits work between specialist agents, collects their reports, and asks Taeho for approval. The rules below are written down and the agents load them every session.</span>
-      <span class="ko">dotz는 Claude Code로 돌아갑니다. 메인 Claude 세션이 실장 역할로 일을 직원들에게 나누고, 보고를 모으고, 태호에게 승인을 받습니다. 아래 규칙은 문서로 적혀 있고, 직원들은 세션마다 이를 불러와 따릅니다.</span>
+      <span class="en">dotz runs on Claude Code. The main Claude session acts as chief of staff: it splits work between specialist agents, collects their reports, and asks Taeho for approval. The rules below are written down and the agents load them every session. This is how several apps are maintained and updated at the same time.</span>
+      <span class="ko">dotz는 Claude Code로 돌아갑니다. 메인 Claude 세션이 실장 역할로 일을 직원들에게 나누고, 보고를 모으고, 태호에게 승인을 받습니다. 아래 규칙은 문서로 적혀 있고, 직원들은 세션마다 이를 불러와 따릅니다. 이 방식으로 여러 앱을 동시에 유지하고 업데이트합니다.</span>
     </p>
 
     <ol class="flow" aria-label="Workflow">
@@ -285,9 +360,19 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
 </div>
 </section>
 
+<section id="client" aria-labelledby="h-client">
+<div class="wrap grid">
+  <div class="label mono">03 <span class="en">Client work</span><span class="ko">개발 의뢰</span></div>
+  <div>
+    <h2 id="h-client"><span class="en">We also build apps for others.</span><span class="ko">다른 분의 앱도 만듭니다.</span></h2>
+    <p><span class="en">Besides our own apps, dotz takes app development commissions as a freelance studio. The work is done the same way as above: specialist agents draft and build, and a person reviews and approves. To discuss a project, write to the email address below.</span><span class="ko">자체 앱 외에 앱 개발 의뢰도 프리랜스로 받습니다. 작업은 위와 같은 방식으로, 역할별 AI 직원이 초안과 구현을 하고 사람이 검토하고 승인합니다. 프로젝트 문의는 아래 이메일로 보내 주세요.</span></p>
+  </div>
+</div>
+</section>
+
 <section id="contact" aria-labelledby="h-contact">
 <div class="wrap grid">
-  <div class="label mono">03 <span class="en">Contact</span><span class="ko">연락처</span></div>
+  <div class="label mono">04 <span class="en">Contact</span><span class="ko">연락처</span></div>
   <div>
     <h2 id="h-contact"><span class="en">Write to Taeho.</span><span class="ko">태호에게 보내 주세요.</span></h2>
     <p class="mail"><a id="mail" href="#contact"><span class="en">Email address coming soon</span><span class="ko">이메일 주소 준비 중</span></a></p>
@@ -298,7 +383,7 @@ footer{border-top:1px solid var(--ink);padding-block:28px 48px;display:flex;flex
 
 <div class="wrap">
 <footer class="mono">
-  <span>dotz.io.kr</span>
+  <span class="biz"><span class="en">dotz is a brand operated by Submeet.<br>Submeet · CEO Taeho Jeong · Business registration no. 250-15-02645<br>taeho@dotz.io.kr</span><span class="ko">dotz는 써밋(Submeet)이 운영하는 브랜드입니다.<br>상호 써밋 · 대표 정태호 · 사업자등록번호 250-15-02645<br>taeho@dotz.io.kr</span></span>
   <span class="en">Built with Claude Code. Not affiliated with Anthropic.</span><span class="ko">Claude Code로 만들었습니다. Anthropic과 제휴 관계가 아닙니다.</span>
 </footer>
 </div>
